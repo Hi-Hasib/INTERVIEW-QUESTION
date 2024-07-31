@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>this is not confused anymore</h1>
+    <p onclick="this.innerText = 'You Clickeed'"> Ia ma paragragraph dont'n Click me</p>
     <script>
         const myObj =  {
             name:" Kuddus Ali",
@@ -19,10 +20,24 @@
         const anotherObj = {
             name:"Biddut Ali"
         }
-        myObj.getFulllName()
-        anotherObj.getFulllName = myObj.getFulllName;
-        console.log(anotherObj.getFulllName);
-        anotherObj.getFulllName()
-    </script>
+
+        setTimeout(function(){
+            console.log(this)
+        },1000)
+    //     myObj.getFulllName()
+    //     anotherObj.getFulllName = myObj.getFulllName;
+
+    //     console.log(anotherObj.getFulllName);
+    //     anotherObj.getFulllName()
+
+     function add (a,b){
+        console.log(this)
+        return a + b;
+     }
+     add(12,13)
+     anotherObj.sum = add;
+     anotherObj.sum()
+
+         </script>
 </body>
 </html>
